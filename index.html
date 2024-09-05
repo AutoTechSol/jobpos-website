@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobpos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Job Board</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#post-job">Post a Job</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Log in</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="job-listings">
+            <h2>Job Listings</h2>
+            <div class="job">
+                <h3>Software Engineer</h3>
+                <p>Company: XYZ Corp</p>
+                <p>Location: Remote</p>
+                <p>Description: We are looking for a talented software engineer to join our team.</p>
+                <a href="#">Apply Now</a>
+            </div>
+            <div class="job">
+                <h3>Product Manager</h3>
+                <p>Company: ABC Inc</p>
+                <p>Location: New York, NY</p>
+                <p>Description: Seeking an experienced product manager to lead our new product initiatives.</p>
+                <a href="#">Apply Now</a>
+            </div>
+            <!-- More job listings can go here -->
+        </section>
+
+        <section id="post-job">
+            <h2>Post a Job</h2>
+            <form action="submit-job.php" method="post">
+                <label for="job-title">Job Title:</label>
+                <input type="text" id="job-title" name="job-title" required>
+
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" required>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="description">Job Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <button type="submit">Post Job</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jobpos. All rights reserved.</p>
+        <p><a href="#contact">Contact Us</a></p>
+    </footer>
+</body>
+</html>
