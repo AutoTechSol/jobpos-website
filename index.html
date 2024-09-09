@@ -106,6 +106,46 @@
         <p>&copy; 2024 Jobpos. All rights reserved.</p>
         <p><a href="#contact">Contact Us</a></p>
     </footer>
-<script>alert('Hi! My Name is Junel. Welcome to Jobpos😊')</script>
+<script>
+    // Sample job data
+    const jobs = [
+        {
+            title: "Software Engineer",
+            company: "XYZ Corp",
+            location: "Remote",
+            description: "We are looking for a talented software engineer to join our team. Apply today and be a part of our innovative projects!",
+            link: "job-details.html"
+        },
+        {
+            title: "Product Manager",
+            company: "ABC Inc",
+            location: "New York, NY",
+            description: "Seeking an experienced product manager to lead our new product initiatives. Join us and make an impact!",
+            link: "job-details.html"
+        },
+        // Add more jobs here
+    ];
+
+    function loadJobs() {
+        const jobListingsSection = document.getElementById('job-listings');
+
+        jobs.forEach(job => {
+            const jobElement = document.createElement('div');
+            jobElement.classList.add('job');
+            
+            jobElement.innerHTML = `
+                <h3>${job.title}</h3>
+                <p>Company: ${job.company}</p>
+                <p>Location: ${job.location}</p>
+                <p>Description: ${job.description}</p>
+                <a href="${job.link}">Apply Now</a>
+            `;
+            
+            jobListingsSection.appendChild(jobElement);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadJobs);
+</script>
 </body>
 </html>
