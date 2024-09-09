@@ -23,68 +23,12 @@
     <main>
         <section id="job-listings">
             <h2>Job Listings</h2>
-            <div class="job">
-                <h3>Software Engineer</h3>
-                <p>Company: XYZ Corp</p>
-                <p>Location: Remote</p>
-                <p>Description: We are looking for a talented software engineer to join our team. Apply today and be a part of our innovative projects!</p>
-                <a href="job-details.html">Apply Now</a>
-            </div>
-            <div class="job">
-                <h3>Product Manager</h3>
-                <p>Company: ABC Inc</p>
-                <p>Location: New York, NY</p>
-                <p>Description: Seeking an experienced product manager to lead our new product initiatives. Join us and make an impact!</p>
-                <a href="job-details.html">Apply Now</a>
-            </div>
-            <div class="job">
-                <h3>Web Developer</h3>
-                <p>Company: Jobpos</p>
-                <p>Location: Remote</p>
-                <p>Description: We are looking for a full stack Web Developer.</p>
-                <a href="job-details.html">Apply Now</a>
-            </div>
-            <div class="job">
-                <h3>Security Officer</h3>
-                <p>Company: Jobpos</p>
-                <p>Location: Saudi Arabia</p>
-                <p>Description: We are looking for a License Security Officer.</p>
-                <a href="job-details.html">Apply Now</a>
-            </div>
-            <div class="job">
-                <h3>CCTV Operator</h3>
-                <p>Company: Jobpos</p>
-                <p>Location: Saudi Arabia</p>
-                <p>Description: We are looking for a Experience CCTV Operator with Technical knowledge.</p>
-                <a href="job-details.html">Apply Now</a>
-            </div>
-            <div class="job">
-                <h3>Housekeeping</h3>
-                <p>Company: Jobpos</p>
-                <p>Location: Saudi Arabia</p>
-                <p>Description: We are looking for experience Housekeeper with NCII.</p>
-                <a href="job-details.html">Apply Now</a>
-            </div>
-            <div class="job">
-                <h3>Barista</h3>
-                <p>Company: Jobpos</p>
-                <p>Location: Saudi Arabia</p>
-                <p>Description: We are looking for a Experience Barista with pleasing personality.</p>
-                <a href="job-details.html">Apply Now</a>
-            </div>
-             <div class="job">
-                <h3>Barista</h3>
-                <p>Company: Jobpos</p>
-                <p>Location: Saudi Arabia</p>
-                <p>Description: We are looking for a Experience Barista with pleasing personality.</p>
-                <a href="job-details.html">Apply Now</a>
-            </div>
-        <!-- More job listings can go here -->
+            <!-- Job listings will be dynamically inserted here -->
         </section>
 
         <section id="post-job">
             <h2>Post a Job</h2>
-            <form action="submit-job.php" method="post">
+            <form id="post-job-form" action="submit-job.php" method="post">
                 <label for="job-title">Job Title:</label>
                 <input type="text" id="job-title" name="job-title" required>
 
@@ -106,46 +50,47 @@
         <p>&copy; 2024 Jobpos. All rights reserved.</p>
         <p><a href="#contact">Contact Us</a></p>
     </footer>
-<script>
-    // Sample job data
-    const jobs = [
-        {
-            title: "Software Engineer",
-            company: "XYZ Corp",
-            location: "Remote",
-            description: "We are looking for a talented software engineer to join our team. Apply today and be a part of our innovative projects!",
-            link: "job-details.html"
-        },
-        {
-            title: "Product Manager",
-            company: "ABC Inc",
-            location: "New York, NY",
-            description: "Seeking an experienced product manager to lead our new product initiatives. Join us and make an impact!",
-            link: "job-details.html"
-        },
-        // Add more jobs here
-    ];
 
-    function loadJobs() {
-        const jobListingsSection = document.getElementById('job-listings');
+    <script>
+        // Sample job data
+        const jobs = [
+            {
+                title: "Software Engineer",
+                company: "XYZ Corp",
+                location: "Remote",
+                description: "We are looking for a talented software engineer to join our team. Apply today and be a part of our innovative projects!",
+                link: "job-details.html"
+            },
+            {
+                title: "Product Manager",
+                company: "ABC Inc",
+                location: "New York, NY",
+                description: "Seeking an experienced product manager to lead our new product initiatives. Join us and make an impact!",
+                link: "job-details.html"
+            }
+            // Add more jobs here
+        ];
 
-        jobs.forEach(job => {
-            const jobElement = document.createElement('div');
-            jobElement.classList.add('job');
-            
-            jobElement.innerHTML = `
-                <h3>${job.title}</h3>
-                <p>Company: ${job.company}</p>
-                <p>Location: ${job.location}</p>
-                <p>Description: ${job.description}</p>
-                <a href="${job.link}">Apply Now</a>
-            `;
-            
-            jobListingsSection.appendChild(jobElement);
-        });
-    }
+        function loadJobs() {
+            const jobListingsSection = document.getElementById('job-listings');
 
-    document.addEventListener('DOMContentLoaded', loadJobs);
-</script>
+            jobs.forEach(job => {
+                const jobElement = document.createElement('div');
+                jobElement.classList.add('job');
+                
+                jobElement.innerHTML = `
+                    <h3>${job.title}</h3>
+                    <p>Company: ${job.company}</p>
+                    <p>Location: ${job.location}</p>
+                    <p>Description: ${job.description}</p>
+                    <a href="${job.link}">Apply Now</a>
+                `;
+                
+                jobListingsSection.appendChild(jobElement);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadJobs);
+    </script>
 </body>
 </html>
