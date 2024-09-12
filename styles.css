@@ -15,8 +15,8 @@ body {
 
 /* Header Styles */
 header {
-    background: #green;
-    color: #fff;
+    background: #333;
+    color: #green;
     padding: 1rem 0;
     text-align: center;
 }
